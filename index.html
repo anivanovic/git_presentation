@@ -16,7 +16,11 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <section>Git prezentacija</section>
+                <section data-markdown>
+                    <script type="text/template">
+# Git prezentacija
+                    </script>
+                </section>
                 <section>
                     <h2>Raspored prezentacije</h2>
                     <p class="fragment fade">Osnove git-a</p>
@@ -24,15 +28,55 @@
                     <p class="fragment fade">Utjecaj git-a na tipičan workflow</p>
                     <p class="fragment fade">Mogućnosti koje se otvaraju sa gitom</p>
                 </section>
+                <section data-background-image="./img/questions.jpg">
+                </section>
             </section>
 
             <section>
-                <section>
-                    <h2>Osnove git-a</h2>
+                <section data-markdown>
+                    <script type="text/template">
+#### Povijest git projekta
+
+* tvorac Linus Torvalds, glavni developer Linux kernela
+* od 1991. do 2002. promjene se šalju e-mailom kao patchevi ili zip arhive
+* od 2002. do 2005. Linux projekt koristi BitKeeper za verzioniranje koda
+* od 2005. projekt ne može više koristiti BitKeeper zbog sukoba s
+privatnom kompanijom koja stoji iza njega
+                    </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-# Osnovne narebe
+#### Povijest git projekta
+
+Od početka je zamišljen kao alat koji treba pomoći
+pri merganju na velikim projektima s jako decentraliziranim
+timom.
+
+Upravo u tome je jako uspješan.
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### 3 glavna zahtjeva
+
+* mora biti decentraliziran kao BitKeeper
+* mora pružati integritet (sigurnost protiv korupcije podataka u repozitoriju)
+* mora biti brz
+
+                    </script>
+                </section>
+            </section>
+
+            <section>
+                
+                <section data-markdown>
+                    <script type="text/template">
+# Osnove git-a
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Osnovne narebe
 * git init
 * git clone
 * git commit
@@ -152,7 +196,7 @@ Naredba ima tri glavne namjene:
 #### Git rebase
 
 Jedan od dva načina za integraciju promjena
-sa jedne grane na drugu. Mijenja povijest projekta.
+s jedne grane na drugu. Mijenja povijest projekta.
 
         git checkout experiment
         git rebase master
@@ -182,7 +226,7 @@ na drugu. Ne mijenja povijest.
 ![Rebase image](img/merging_2.png)
                     </script>
                 </section>
-                                <section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
 #### Three way merge
 
@@ -214,6 +258,68 @@ Sinkronizira granu na kojoj se trenutno nalazimo.
             <section>
                 <section data-markdown>
                     <script type="text/template">
+# Git <span style="text-transform: lowercase;">vs</span> Svn
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+# Git <span style="text-transform: lowercase;">vs</span> Svn
+
+1. git je decentraliziran dok je svn centraliziran
+
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+# Git <span style="text-transform: lowercase;">vs</span> Svn
+
+2. git nije dobar pri verzioniranju velikih binarnih dototeka
+
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+# Git <span style="text-transform: lowercase;">vs</span> Svn
+
+3. git je zamišljen za verzioniranje jednog projekta po repozitoriju
+
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+# Git <span style="text-transform: lowercase;">vs</span> Svn
+
+4. stvaranje grana je puno jeftinije u gitu što omogućuje novi
+način rada
+
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+# Git <span style="text-transform: lowercase;">vs</span> Svn
+
+5. pošto svatko ima lokalnu verziju repozitorija većina operacija je
+lokalna a zbog toga i brža
+
+6. omogućuje lokalno commitanje čak i ako nemamo pristup internetu za
+povezivanje sa centralnim repozitorijem
+
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+# Git <span style="text-transform: lowercase;">vs</span> Svn
+
+7. Git ima više opcija ali je zbog toga zahtjeva puno navikavanja
+početnicima
+
+                    </script>
+                </section>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    <script type="text/template">
 ## Kako iskoristiti git?
 
 Ispravna uporaba grana u gitu.
@@ -221,6 +327,11 @@ Ispravna uporaba grana u gitu.
                     </script>
                 </section>
             </section>
+            
+
+            <section data-background-image="./img/Charlie-Day-WTF.gif"></section>
+            <section data-background-image="./img/awsom.gif"></section>
+            <section data-background-video="./video/ask_qustions.mp4"></section>
         </div>
     </div>
 
