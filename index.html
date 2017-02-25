@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Git prezentacija</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="lib/reveal.js/lib/css/zenburn.css">
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section>Git prezentacija</section>
+                <section>
+                    <h2>Raspored prezentacije</h2>
+                    <p class="fragment fade">Osnove git-a</p>
+                    <p class="fragment fade">Usporedba git-a i svn-a</p>
+                    <p class="fragment fade">Utjecaj git-a na tipičan workflow</p>
+                    <p class="fragment fade">Mogućnosti koje se otvaraju sa gitom</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Osnove git-a</h2>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+# Osnovne narebe
+* git init
+* git clone
+* git commit
+* git checkout
+* git push
+* git pull
+* git rebase
+* git merge
+                    </script>
+                </section>
+                <section>
+                    <h2>git init</h2>
+                    <pre>
+                        <code data-trim data-noescape>
+                            git init
+
+                            git init &ltdirectory&gt
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>git clone</h2>
+                    <pre>
+                        <code data-trim data-noescape>
+                            git clone &lturl&gt
+
+                            git clone &lturl&gt &ltdirectory&gt
+                        </code>
+                    </pre>
+                    <p>Primjer:</p>
+                    <pre>
+                        <code data-trim data-noescape>
+                            git clone https://github.com/google/guava.git
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h5>Sadržaj repozitorija</h5>
+                    <img width="80%" height="80%" data-src="img/git_clone.jpg" style="background:none; border:none; box-shadow:none;" alt="Git repozitorij sa radnim direktorijem">
+                </section>
+                <section>
+                    <h5>Sadržaj repozitorija</h5>
+                    <img width="80%" height="80%" data-src="img/git_clone_repo.jpg" style="background:none; border:none; box-shadow:none;" alt="Git repozitorij">
+                </section>
+                <section>
+                    <h5>Sadržaj repozitorija</h5>
+                    <img width="80%" height="80%" data-src="img/git_clone_work_dir.jpg" style="background:none; border:none; box-shadow:none;" alt="Git radni direktorij">
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+### Git commit
+</br>
+
+        git commit -m "My first git commit."
+</br>
+Služi za promjenu grane koja se trenutno nalazi
+u radnom direktoriju.
+                    </script>
+                </section>
+                <section>
+                    <h5>Staging area</h5>
+                    <img width="80%" height="80%" data-src="img/staging.png" style="background:none; border:none; box-shadow:none;" alt="Staging area">
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+### Git checkout
+        git checkout <branch>
+
+Služi za promjenu grane koja se trenutno nalazi
+u radnom direktoriju.
+                    </script>
+                </section>
+                <section>
+                    TODO: dodati sliku za primjer povjesti repozitorija
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### 98ca9c4664981e4397625791c8ea3bbb5f2279a3
+</br>
+
+        git add README test.rb LICENSE
+        git commit -m 'The initial commit of my project'
+                    </script>
+                </section>
+                <section>
+                        <img width="80%" height="80%" data-src="img/commit_hash.png" style="background:none; border:none; box-shadow:none;" alt="Sadržaj git commit objekta">
+                </section>
+                <section>
+                        <img width="80%" height="80%" data-src="img/branch.png" style="background:none; border:none; box-shadow:none;" alt="Više commitova">
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Git checkout
+
+Naredba ima tri glavne namjene:
+* Može kreirati novu granu
+        
+        git checkout nova_grana -b
+
+* Služi za promjenu grane koja je u radnom direktoriju
+
+        git checkout master
+
+* Može vratiti radni direktorij na bilo koji commit
+
+        git checkout 98ca9c4664981e4397625791c8ea3bbb5f2279a3
+                    </script>
+                </section>
+                <section>
+                        <img width="80%" height="80%" data-src="img/branching.png" style="background:none; border:none; box-shadow:none;" alt="Više grana u gitu">
+                </section>
+                <section>
+                        <img width="80%" height="80%" data-src="img/diverging_branches.png" style="background:none; border:none; box-shadow:none;" alt="Git nelinearna povijest">
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Git rebase
+
+Jedan od dva načina za integraciju promjena
+sa jedne grane na drugu. Mijenja povijest projekta.
+
+        git checkout experiment
+        git rebase master
+
+![Rebase image](img/rebasing.png)
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Git merge
+
+Drugi način za integraciju promjena s jedne grane
+na drugu. Ne mijenja povijest.
+
+        git checkout master
+        git merge experiment
+
+![Rebase image](img/merging.png)
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Fast-forward merge
+
+![Rebase image](img/rebasing.png)
+
+![Rebase image](img/merging_2.png)
+                    </script>
+                </section>
+                                <section data-markdown>
+                    <script type="text/template">
+#### Three way merge
+
+![Rebase image](img/merging.png)
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Git push
+
+Nakon što se izmjene commitaju one se tek nalaze
+spremljene u našem lokalnom .git repozitoriju. Kako
+bi završile na glavnom repozitoriju treba ih pushati.
+
+        git push master
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Git pull
+
+Sinkronizira granu na kojoj se trenutno nalazimo.
+
+        git pull <remote>
+                    </script>
+                </section>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    <script type="text/template">
+## Kako iskoristiti git?
+
+Ispravna uporaba grana u gitu.
+
+                    </script>
+                </section>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="lib/reveal.js/js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'concave',
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                    src: 'lib/reveal.js/lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'lib/reveal.js/plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'lib/reveal.js/plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'lib/reveal.js/plugin/highlight/highlight.js',
+                    async: true,
+                    condition: function () {
+                        return !!document.querySelector('pre code');
+                    },
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: 'lib/reveal.js/plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                {
+                    src: 'lib/reveal.js/plugin/notes/notes.js',
+                    async: true
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "git_presentation",
+  "authors": [
+    "Antonije Ivanovic <antonije999@gmail.com>"
+  ],
+  "description": "HTML presentation of Git version control system",
+  "main": "index.html",
+  "keywords": [
+    "git",
+    "svn",
+    "dvcs",
+    "reveal"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
