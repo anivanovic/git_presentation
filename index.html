@@ -415,47 +415,110 @@ Primjer povijesti projekta sa feature brancevima.
 
 <img alt="Gitflow branches" src="img/gitflow.svg" class="whiteBackground">
 
-Ne donosi neku novu komandu ili pojam. To je samo način na koji
+Ne donosi neku novu koncept ili komandu. To je samo način na koji
 organizirati grane na velikim projektima usmerene prema
 novim verzijama aplikacije.
+
+Note:
+* Zapravo dogovor kako koristiti grane na projektu
+i koja je grana za što zadužena
+* Definira striktni model grananja projekta usmjeren prema
+izradi nove verzije aplikacije
+* Robusniji i kompleksniji način rada od feature branches
+workflow-a koji nudi više kontrole na projektu
+* Točno definira za što je svaka grana zadužena i kako i kada
+se mogu promjene s jedne grane integrirati s drugom
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## Gitflow
+## Master i develop grana
 
 <img alt="Gitflow master and develop branches" src="img/master_develop_branches.svg" class="whiteBackground">
+
+Note:
+* umjesto jedne grane koriste se dvije grane za snimanje povijesti projekta
+* develop grana nastaje iz glavne grane i na njoj se događa kompletan
+razvoj novih funkcionalnosti
+* master grana služi za snimanje službenih verzija aplikacije
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## Gitflow
+## Feature branches
 
 <img alt="Gitflow develop and feature branches" src="img/develop_features_branches.svg" class="whiteBackground">
+
+Note:
+* Svaka nova funkcionalnost bi trebala biti u zasebnoj
+feature grani
+* Uvijek se granaju iz develop grane
+* Nakon što je funkcionalnost gotova treba biti mergana u develop granu
+* Feature grane nikada nebi smjele imati direktnu interakciju sa master
+granom
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## Gitflow
+## Release grane
 
 <img height="550px" alt="Gitflow release branches" src="img/release_branch.svg" class="whiteBackground">
+
+Note:
+* Nakon što je na develop grani razvijeno dovoljno funkcionalnosti
+za novu verziju aplikacije, ili se bliži datum za novu verziju aplikacije,
+sa develop grane se napravi release grana.
+* Ovo omogućuje da se nove funkcionalnosti razvijaju na develop grani
+a na release grani se samo ispravljaju bugovi
+* Na release granu nebi smjele ići nove funkcionalnosti osim ispravak
+bugova i stvari vezane uz novu verziju.
+* Nakon što smo završili sa release granom mergamo ju sa master granom
+i merge commitu dajemo tag s novom verzijom.
+* Release granu također mergamo i sa develop granom koja je u međuvremenu
+napredovala i ima nove feature na sebi
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## Gitflow
+## Maintenance (hotfix) grane
 
 <img height="550px" alt="Gitflow maintenance branches" src="img/maintenance_branches.svg" class="whiteBackground">
+
+Note:
+* Služe za ispravak grešaka na verzijama aplikacije koje su na produkciji
+* Jedina grana koja se grana iz master grane
+* Nakon ispravka treba se mergati sa master granom i merge commit treba
+biti tagiran sa novim brojem verzije aplikacije
+* Također treba ju mergati i sa develop granom
                     </script>
                 </section>
 
                 <section>
                     <h2>Git branches abuse</h2>
                     <img alt="Abusing git branching" src="img/branch_abuse.png">
+
+                    <aside>
+                        <ul>
+                            <li>Kao i sve, ako se koristi nepromišljeno bez razišljanja
+                            može doći do prevelikog broja grana. Povijest projekta više
+                            nije pregledna ili jasna.</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Git branches abuse</h2>
                     <img alt="Abusing git branching 2" src="img/branch_abuse_2.png">
+
+                    <aside>
+                        <ul>
+                            <li>Predložiti da bi trebalo napraviti polako tranziciju sa SVN-a
+                            na git</li>
+                            <li>Prvo koristiti git kao svn a potom postupno uvoditi
+                            nove grane i viditi što nama odgovara</li>
+                            <li>Treba sporazumno unutar tima doći do dogovora
+                            koju branching strategiju koristiti</li>
+                        </ul>
+                    </aside>
                 </section>
             </section>
             
