@@ -18,7 +18,7 @@
             <section>
                 <section data-markdown>
                     <script type="text/template">
-# Git prezentacija
+# Git prezentacija ![Git logo](img/git_logo.png)
                     </script>
                 </section>
                 <section>
@@ -37,7 +37,15 @@
                     <script type="text/template">
 #### Povijest git projekta
 
-* tvorac Linus Torvalds, glavni developer Linux kernela
+![Linus Torvalds](img/linus.jpg)
+
+Tvorac Linus Torvalds, glavni developer Linux kernela
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Povijest git projekta
+
 * od 1991. do 2002. promjene se šalju e-mailom kao patchevi ili zip arhive
 * od 2002. do 2005. Linux projekt koristi BitKeeper za verzioniranje koda
 * od 2005. projekt ne može više koristiti BitKeeper zbog sukoba s
@@ -329,18 +337,41 @@ se stvari mogu napraviti na više načina
                     <script type="text/template">
 Nije potrebno mjenjati workspace kako bi se promjenila grana.
 Uvijek smo u isotm workspaceu i samo checkoutamo različite grane.
+
+Note:
+* Checkout je vrlo brz
+* Ako je prevelika razlika između dvije grane
+eclipseu može duže trebati da izbuilda promjenjene
+fileove
                     </script>
                 </section>
-                <section data-mardown>
+                <section data-markdown>
                     <script type="text/template">
 Lakše kreiranje novih grana i njihovo commitanje
-u centralni repozitorij.
+u centralni repozitorij
+
+Note:
+* Kasnije ćemo vidjeti da lakoća stvaranja novih
+grana utječe na kompletan način rada sa Gitom
+* Za razliku od svn-a ne stvara se novi folder
+i kompletna kopija već se samo stvara novi
+file od 40 bajtova
+* Kasnije ćemo vidjeti da nam grane mogu poslužiti
+kao kontejneri za kod
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
 Kada se napravi nova grana ne gubi se
 vrijeme na podešavanje novog workspacea.
+
+Note:
+* Kada se na projektu kreira nova grana
+ne gubi se vrijeme na podešavanje novog
+workspacea
+* Može se odmah krenuti raditi sa novom granom.
+Samo ju je potrebno pullati sa centralnog repozitorija
+
                     </script>
                 </section>
                 <section data-markdown>
@@ -348,6 +379,12 @@ vrijeme na podešavanje novog workspacea.
 Ako imamo dva git projekta u workspace-u (jis i oss)
 lako se može provjeriti dali se master grana oss-a
 compile-a sa 3.1.1 granom jis-a
+
+Note:
+* S vremena na vrijeme se može dogoditi da moramo
+provjeriti dali se različite verzije projekata
+compileaju
+* U svnu je to mnogo teže
                     </script>
                 </section>
                 <section data-markdown>
@@ -363,6 +400,37 @@ Git ima alate za prijenos promjena sa jedne grane na drugu:
 * cherry-pick
 * merge
 * rebase
+
+Note:
+* Namjerno nisam govorio o cherry-pick komandi
+* Njezina se uporaba ne preporučuje
+* Preferira se korištenje merge naredbe za
+spajanje izmjena sa jedne grane na drugu
+* Cherry-pick naredba kopira commit
+sa jedne grane na druge i iz pregleda povijesti
+projekta to nije vidljivo. Tako prebačena promjena
+ničim ne veže te dvije grane
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+Ne samo da je moguće checkoutati grane, već i pojedine commitove.
+Tako je moguće dobit u radnom direktoriju verziju aplikacije u bilo
+kojem vremenskom trenutku u povijesti
+
+Note:
+* Ovo je jako korisno ako imamo naprimjer stack
+trace od prije 4 mjeseca sa produkcije
+* Možemo verziju koja je trenutno na produkciji
+checkoutati i debagirati sa njom
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+Možemo sa sigurnošću raditi velike izmjene na projektu.
+Ako u međuvremenu moramo raditi na hitnom ispravku bug-a
+trenutne izmjene možemo commitati na novu granu i vratiti
+se na master granu.
                     </script>
                 </section>
             </section>
@@ -441,6 +509,9 @@ je lakše nastaviti rad na toj funkcionalnosti
 iz releasea potrebno je revertati samo taj commit
 * Sve izmjene zbog merganja su odvojene od funkcionalnosti u svom
 commitu
+* Svaka feature grana priča priču kako se feature razvijao
+* Poželjno je i commitati što češće tako da se bolje razumije
+razvoj featura
                     </script>
                 </section>
                 <section data-markdown>
