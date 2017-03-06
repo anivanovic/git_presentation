@@ -376,6 +376,17 @@ Mogućnosti koje korištenje gita otvara.
 
 * feature branch
 * gitflow, sveobuhvatna branching strategija
+
+Note:
+* Sam git nudi mnogo novih funkcionalnosti
+ali se svejedno može koristiti na isti način
+kako radi svn
+* Ako se ne koriste njegove funkcionalnosti
+do kraja nema nekog smisla njegovo korištenje.
+U tom slučaju se dobiva svn workflow a alat se teže
+koristi (za običan commit sada postoje dva koraka).
+* Iz tog razloga osmišljeni su posebni načini rada
+koji dobro pašu git-u
                     </script>
                 </section>
                 <section data-markdown>
@@ -386,23 +397,29 @@ Mogućnosti koje korištenje gita otvara.
 
 Kreirati novi branch za svaki feature koji se
 želi napraviti ma kako mal on bio.
+
+Note:
+* Pošto je stvaranje grana jeftino u gitu enkapsulirati
+svaki novi feature koji se programira u zasebnu granu
+*
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
 ## Feature branchevi
-
 
 <img alt="Merge feature branch" src="img/merge_feature.svg" class="whiteBackground">
 
 Nakon što se razvije feature potrebno ga je
 integrirati na master granu.
+
+Note:
+*
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
 ## Feature branchevi
-
 
 <img alt="Historiy of feature branches view" src="img/feature_branches.jpg" class="whiteBackground">
 
@@ -497,7 +514,7 @@ biti tagiran sa novim brojem verzije aplikacije
                     <h2>Git branches abuse</h2>
                     <img alt="Abusing git branching" src="img/branch_abuse.png">
 
-                    <aside>
+                    <aside class="notes">
                         <ul>
                             <li>Kao i sve, ako se koristi nepromišljeno bez razišljanja
                             može doći do prevelikog broja grana. Povijest projekta više
@@ -509,7 +526,7 @@ biti tagiran sa novim brojem verzije aplikacije
                     <h2>Git branches abuse</h2>
                     <img alt="Abusing git branching 2" src="img/branch_abuse_2.png">
 
-                    <aside>
+                    <aside class="notes">
                         <ul>
                             <li>Predložiti da bi trebalo napraviti polako tranziciju sa SVN-a
                             na git</li>
