@@ -399,9 +399,13 @@ Kreirati novi branch za svaki feature koji se
 želi napraviti ma kako mal on bio.
 
 Note:
-* Pošto je stvaranje grana jeftino u gitu enkapsulirati
+* Stvarati grane na dnevnoj bazi za razliku od svn gdje se
+grana rijetko stvara
+* U svn grane služe da se snimi dugotrajan developerski napor
+od nekoliko mjeseci, u gitu je moguće svakoj funkcionalnosti
+napraviti granu
+* Pošto je stvaranje grana jeftino, enkapsulirati
 svaki novi feature koji se programira u zasebnu granu
-*
                     </script>
                 </section>
                 <section data-markdown>
@@ -414,7 +418,11 @@ Nakon što se razvije feature potrebno ga je
 integrirati na master granu.
 
 Note:
-*
+* Ova funkcionalnost je jako dobra za open source zajednicu gdje
+svaki pojedini commiter razvija novu funkcionalnost u svojoj grani
+i kada ju želi mergati na master granu drugi developeri pregledavaju
+njegove izmjene i odobravaju merge ili ga odbijaju
+* Ovaj način rada također omogućuje code review na kodu
                     </script>
                 </section>
                 <section data-markdown>
@@ -424,6 +432,15 @@ Note:
 <img alt="Historiy of feature branches view" src="img/feature_branches.jpg" class="whiteBackground">
 
 Primjer povijesti projekta sa feature brancevima.
+
+Note:
+* Kada svaki feature imamo enkapsuliran na svojoj grani lakše je pratiti
+povijest razvijanja pojedine funkcionalnosti i nekom drugom developeru
+je lakše nastaviti rad na toj funkcionalnosti
+* Na master grani imamo merge commit i ako želimo maknuti feature
+iz releasea potrebno je revertati samo taj commit
+* Sve izmjene zbog merganja su odvojene od funkcionalnosti u svom
+commitu
                     </script>
                 </section>
                 <section data-markdown>
