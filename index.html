@@ -272,6 +272,16 @@ Sinkronizira granu na kojoj se trenutno nalazimo.
 
 1. git je decentraliziran dok je svn centraliziran
 
+Note:
+* Identičan git repozitorij koji se nalazi na centralnom
+serveru iskopiran je i nalazi se lokalno na našem računalu
+* Lokalni repozitorij također može poslužiti kao repozitorij
+s kojim se drugi developeri mogu syncati
+* Pošto u svnu nemamo kopiju repozitorija osuđeni smo uvjijek
+biti na zadnjoj reviziji koda u lokalnom direktoriju
+* To nam zadaje malo više posloa pošto commit sprema naše promjene
+tek u lokalni repozitorij a push te promjene šalje na centralni
+repozitorij
                     </script>
                 </section>
                 <section data-markdown>
@@ -280,6 +290,11 @@ Sinkronizira granu na kojoj se trenutno nalazimo.
 
 2. git nije dobar pri verzioniranju velikih binarnih dototeka
 
+Note:
+* Postoje rješenja za to ali nisu jednostavna i koriste se dodatni alati
+pored git-a
+* Sa svakom novom verzijom binarne datoteke git sprema kompletnu novu
+verziju filea i repozitorij raste za veličinu te nove datoteke
                     </script>
                 </section>
                 <section data-markdown>
@@ -288,6 +303,10 @@ Sinkronizira granu na kojoj se trenutno nalazimo.
 
 3. git je zamišljen za verzioniranje jednog projekta po repozitoriju
 
+Note:
+* Nije zamišljen za verzioniranje ogromnih monolitnih projekata
+* U tim slučajevima zamišljeno je razbijati repozitorij na manje
+projekte
                     </script>
                 </section>
                 <section data-markdown>
