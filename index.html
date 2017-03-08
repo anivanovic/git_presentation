@@ -270,7 +270,7 @@ Sinkronizira granu na kojoj se trenutno nalazimo.
                     <script type="text/template">
 # Git <span style="text-transform: lowercase;">vs</span> Svn
 
-1. git je decentraliziran dok je svn centraliziran
+* git je decentraliziran dok je svn centraliziran
 
 Note:
 * Identičan git repozitorij koji se nalazi na centralnom
@@ -288,7 +288,7 @@ repozitorij
                     <script type="text/template">
 # Git <span style="text-transform: lowercase;">vs</span> Svn
 
-2. git nije dobar pri verzioniranju velikih binarnih dototeka
+* git nije dobar pri verzioniranju velikih binarnih dototeka
 
 Note:
 * Postoje rješenja za to ali nisu jednostavna i koriste se dodatni alati
@@ -301,7 +301,7 @@ verziju filea i repozitorij raste za veličinu te nove datoteke
                     <script type="text/template">
 # Git <span style="text-transform: lowercase;">vs</span> Svn
 
-3. git je zamišljen za verzioniranje jednog projekta po repozitoriju
+* git je zamišljen za verzioniranje jednog projekta po repozitoriju
 
 Note:
 * Nije zamišljen za verzioniranje ogromnih monolitnih projekata
@@ -313,7 +313,7 @@ projekte
                     <script type="text/template">
 # Git <span style="text-transform: lowercase;">vs</span> Svn
 
-4. stvaranje grana je puno jeftinije u gitu što omogućuje novi
+* stvaranje grana je puno efikasnije u gitu što omogućuje novi
 način rada
 
                     </script>
@@ -322,11 +322,11 @@ način rada
                     <script type="text/template">
 # Git <span style="text-transform: lowercase;">vs</span> Svn
 
-5. pošto svatko ima lokalnu verziju repozitorija većina operacija je
+* svatko ima lokalnu verziju repozitorija pa je većina operacija
 lokalna a zbog toga i brža
 
-6. omogućuje lokalno commitanje čak i ako nemamo pristup internetu za
-povezivanje sa centralnim repozitorijem
+* omogućuje lokalno commitanje čak i ako nemamo pristup internetu za
+povezivanje s centralnim repozitorijem
 
                     </script>
                 </section>
@@ -334,11 +334,7 @@ povezivanje sa centralnim repozitorijem
                     <script type="text/template">
 # Git <span style="text-transform: lowercase;">vs</span> Svn
 
-7. Svn je lakši za korištenje dok je git zbunjujuć početnicima
-
-Naravno jedan od razloga je i što ima puno više opcija i mnoge
-se stvari mogu napraviti na više načina
-
+* Svn je lakši za korištenje dok je git složeniji početnicima (a i veteranima :)
                     </script>
                 </section>
             </section>
@@ -351,8 +347,8 @@ se stvari mogu napraviti na više načina
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-Nije potrebno mjenjati workspace kako bi se promjenila grana.
-Uvijek smo u isotm workspaceu i samo checkoutamo različite grane.
+Nije potrebno mijenjati workspace kako bi se promjenila grana.
+Uvijek smo u istom workspaceu i samo checkoutamo različite grane.
 
 Note:
 * Checkout je vrlo brz
@@ -364,7 +360,7 @@ fileove
                 <section data-markdown>
                     <script type="text/template">
 Lakše kreiranje novih grana i njihovo commitanje
-u centralni repozitorij
+u centralni repozitorij.
 
 Note:
 * Kasnije ćemo vidjeti da lakoća stvaranja novih
@@ -391,9 +387,9 @@ Samo ju je potrebno pullati sa centralnog repozitorija
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-Ako imamo dva git projekta u workspace-u (jis i oss)
+Ako imamo dva git projekta u workspaceu (jis i oss)
 lako se može provjeriti dali se master grana oss-a
-compile-a sa 3.1.1 granom jis-a
+compilea sa 3.1.1 granom jis-a.
 
 Note:
 * S vremena na vrijeme se može dogoditi da moramo
@@ -406,12 +402,12 @@ compileaju
                     <script type="text/template">
 Testiranje novih ideja je puno jednostavnije.
 Napravi novu granu i sve izmjene commitaj na
-nju. Potom se vrati na glavnu granu.
+nju. Potom se vrati na master granu.
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-Git ima alate za prijenos promjena sa jedne grane na drugu:
+Git ima alate za prijenos promjena s jedne grane na drugu:
 * cherry-pick
 * merge
 * rebase
@@ -430,8 +426,8 @@ ničim ne veže te dvije grane
                 <section data-markdown>
                     <script type="text/template">
 Ne samo da je moguće checkoutati grane, već i pojedine commitove.
-Tako je moguće dobit u radnom direktoriju verziju aplikacije u bilo
-kojem vremenskom trenutku u povijesti
+Tako je moguće u radnom direktoriju dobiti verziju aplikacije u bilo
+kojem vremenskom trenutku u povijesti.
 
 Note:
 * Ovo je jako korisno ako imamo naprimjer stack
@@ -443,7 +439,7 @@ checkoutati i debagirati sa njom
                 <section data-markdown>
                     <script type="text/template">
 Možemo sa sigurnošću raditi velike izmjene na projektu.
-Ako u međuvremenu moramo raditi na hitnom ispravku bug-a
+Ako u međuvremenu moramo raditi na hitnom ispravku buga
 trenutne izmjene možemo commitati na novu granu i vratiti
 se na master granu.
                     </script>
@@ -455,10 +451,10 @@ se na master granu.
                     <script type="text/template">
 ## Kako koristiti git
 
-Mogućnosti koje korištenje gita otvara.
+Mogućnosti koje otvara korištenje gita:
 
 * feature branch
-* gitflow, sveobuhvatna branching strategija
+* gitflow - sveobuhvatna branching strategija
 
 Note:
 * Sam git nudi mnogo novih funkcionalnosti
@@ -479,7 +475,7 @@ koji dobro pašu git-u
 <img alt="Feature branch" src="img/feature.svg" class="whiteBackground">
 
 Kreirati novi branch za svaki feature koji se
-želi napraviti ma kako mal on bio.
+želi napraviti ma koliko mali on bio.
 
 Note:
 * Stvarati grane na dnevnoj bazi za razliku od svn gdje se
@@ -514,7 +510,7 @@ njegove izmjene i odobravaju merge ili ga odbijaju
 
 <img alt="Historiy of feature branches view" src="img/feature_branches.jpg" class="whiteBackground">
 
-Primjer povijesti projekta sa feature brancevima.
+Primjer povijesti projekta s feature brancevima.
 
 Note:
 * Kada svaki feature imamo enkapsuliran na svojoj grani lakše je pratiti
@@ -535,8 +531,8 @@ razvoj featura
 
 <img alt="Gitflow branches" src="img/gitflow.svg" class="whiteBackground">
 
-Ne donosi neku novu koncept ili komandu. To je samo način na koji
-organizirati grane na velikim projektima usmerene prema
+Ne donosi neki novi koncept ili komandu. To je samo način na koji se
+organiziraju grane na velikim projektima usmjerene prema
 novim verzijama aplikacije.
 
 Note:
