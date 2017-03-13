@@ -124,7 +124,7 @@ Primjer:
                     <img width="80%" height="80%" data-src="img/git_clone_repo.jpg" style="background:none; border:none; box-shadow:none;" alt="Git repozitorij">
                 </section>
                 <section>
-                    <h5>Sadržaj repozitorija</h5>
+                    <h5>Radni direktorij</h5>
                     <img width="80%" height="80%" data-src="img/git_clone_work_dir.jpg" style="background:none; border:none; box-shadow:none;" alt="Git radni direktorij">
                 </section>
                 <section data-markdown>
@@ -151,10 +151,10 @@ Primjer:
                     </script>
                 </section>
                 <section>
-                        <img width="80%" height="80%" data-src="img/commit_hash.png" style="background:none; border:none; box-shadow:none;" alt="Sadržaj git commit objekta">
+                        <img width="80%" height="80%" data-src="img/commit_hash.png" style="background:white; border:none; box-shadow:none;" alt="Sadržaj git commit objekta">
                 </section>
                 <section>
-                        <img width="80%" height="80%" data-src="img/branch.png" style="background:none; border:none; box-shadow:none;" alt="Više commitova">
+                        <img width="80%" height="80%" data-src="img/branch.png" style="background:white; border:none; box-shadow:none;" alt="Više commitova">
                 </section>
                 <section>
                     <img width="80%" height="80%" data-src="img/git_history.png" style="background:none; border:none; box-shadow:none;" alt="Povijest git repozitorija nakon par commitova">
@@ -219,23 +219,24 @@ na drugu. Ne mijenja povijest.
         git checkout master
         git merge experiment
 
-![Rebase image](img/merging.png)
-                    </script>
-                </section>
-                <section data-markdown>
-                    <script type="text/template">
-#### Fast-forward merge
-
-![Rebase image](img/rebasing.png)
-
-![Rebase image](img/merging_2.png)
+![Merging image](img/merging.png)
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
 #### Three way merge
 
-![Rebase image](img/merging.png)
+<img width="60%" height="60%" data-src="img/basic-merging-1.png" alt="Three way merge - before merge">
+<img width="60%" height="60%" data-src="img/basic-merging-2.png" alt="Three way merge - after merge">
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### Fast-forward merge
+
+![Fast-forward before](img/rebasing.png)
+
+![Fast-forward after](img/merging_2.png)
                     </script>
                 </section>
                 <section data-markdown>
@@ -439,7 +440,7 @@ checkoutati i debagirati sa njom
                 <section data-markdown>
                     <script type="text/template">
 Možemo sa sigurnošću raditi velike izmjene na projektu.
-Ako u međuvremenu moramo raditi na hitnom ispravku buga
+Ako u međuvremenu moramo raditi na hitnom ispravku buga,
 trenutne izmjene možemo commitati na novu granu i vratiti
 se na master granu.
                     </script>
