@@ -85,45 +85,42 @@ timom. Upravo u tome je jako uspješan
 * git init
 * git clone
 * git commit
+* git branch
 * git checkout
-* git push
-* git pull
 * git rebase
 * git merge
+* git push
+* git pull
                     </script>
                 </section>
-                <section>
-                    <h2>git init</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            git init
+                <section data-markdown>
+                    <script type="text/template">
+### git init
 
-                            git init &ltdirectory&gt
-                        </code>
-                    </pre>
+        git init
+
+        git init <directory>
+                    </script>
                 </section>
-                <section>
-                    <h2>git clone</h2>
-                    <pre>
-                        <code data-trim data-noescape>
-                            git clone &lturl&gt
+                <section data-markdown>
+                    <script type="text/template">
+### git clone</h2>
 
-                            git clone &lturl&gt &ltdirectory&gt
-                        </code>
-                    </pre>
-                    <p>Primjer:</p>
-                    <pre>
-                        <code data-trim data-noescape>
-                            git clone https://github.com/google/guava.git
-                        </code>
-                    </pre>
+        git clone <url>
+
+        git clone <url> <directory>
+
+Primjer:
+
+        git clone https://github.com/google/guava.git
+                    </script>
                 </section>
                 <section>
                     <h5>Sadržaj repozitorija</h5>
                     <img width="80%" height="80%" data-src="img/git_clone.jpg" style="background:none; border:none; box-shadow:none;" alt="Git repozitorij sa radnim direktorijem">
                 </section>
                 <section>
-                    <h5>Sadržaj repozitorija</h5>
+                    <h5>Git repozitorij</h5>
                     <img width="80%" height="80%" data-src="img/git_clone_repo.jpg" style="background:none; border:none; box-shadow:none;" alt="Git repozitorij">
                 </section>
                 <section>
@@ -137,25 +134,12 @@ timom. Upravo u tome je jako uspješan
 
         git commit -m "My first git commit."
 </br>
-Služi za promjenu grane koja se trenutno nalazi
-u radnom direktoriju.
+// TODO: DODATI TEKST
                     </script>
                 </section>
                 <section>
                     <h5>Staging area</h5>
                     <img width="80%" height="80%" data-src="img/staging.png" style="background:none; border:none; box-shadow:none;" alt="Staging area">
-                </section>
-                <section data-markdown>
-                    <script type="text/template">
-### Git checkout
-        git checkout <branch>
-
-Služi za promjenu grane koja se trenutno nalazi
-u radnom direktoriju.
-                    </script>
-                </section>
-                <section>
-                    TODO: dodati sliku za primjer povjesti repozitorija
                 </section>
                 <section data-markdown>
                     <script type="text/template">
@@ -171,6 +155,28 @@ u radnom direktoriju.
                 </section>
                 <section>
                         <img width="80%" height="80%" data-src="img/branch.png" style="background:none; border:none; box-shadow:none;" alt="Više commitova">
+                </section>
+                <section>
+                    <img width="80%" height="80%" data-src="img/git_history.png" style="background:none; border:none; box-shadow:none;" alt="Povijest git repozitorija nakon par commitova">
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+#### git branch
+</br>
+
+        git branch <branch>
+        git branch -d <branch>
+        git branch -m <branch>
+
+
+Omogućuje stvaranje, preimenovanje i brisanje grana
+                    </script>
+                </section>
+                <section>
+                        <img width="80%" height="80%" data-src="img/branching.png" style="background:none; border:none; box-shadow:none;" alt="Više grana u gitu">
+                </section>
+                <section>
+                        <img width="80%" height="80%" data-src="img/diverging_branches.png" style="background:none; border:none; box-shadow:none;" alt="Git nelinearna povijest">
                 </section>
                 <section data-markdown>
                     <script type="text/template">
@@ -189,12 +195,6 @@ Naredba ima tri glavne namjene:
 
         git checkout 98ca9c4664981e4397625791c8ea3bbb5f2279a3
                     </script>
-                </section>
-                <section>
-                        <img width="80%" height="80%" data-src="img/branching.png" style="background:none; border:none; box-shadow:none;" alt="Više grana u gitu">
-                </section>
-                <section>
-                        <img width="80%" height="80%" data-src="img/diverging_branches.png" style="background:none; border:none; box-shadow:none;" alt="Git nelinearna povijest">
                 </section>
                 <section data-markdown>
                     <script type="text/template">
@@ -637,14 +637,12 @@ biti tagiran sa novim brojem verzije aplikacije
                     </aside>
                 </section>
             </section>
-            
 
             <section data-background-image="./img/Charlie-Day-WTF.gif"></section>
             <section data-background-image="./img/awsom.gif"></section>
             <section data-background-video="./video/ask_qustions.mp4"></section>
         </div>
     </div>
-
 
     <script src="lib/reveal.js/lib/js/head.min.js"></script>
     <script src="lib/reveal.js/js/reveal.js"></script>
@@ -698,5 +696,4 @@ biti tagiran sa novim brojem verzije aplikacije
         });
     </script>
 </body>
-
 </html>
