@@ -98,7 +98,7 @@ timom. Upravo u tome je jako uspješan
 <pre><code data-trim data-noescape>
         git init
 
-        git init <directory>
+        git init &lt;directory&gt;
 </code></pre>
                 </section>
                 <section data-markdown>
@@ -133,12 +133,20 @@ Primjer:
 
         git commit -m "My first git commit."
 </br>
-// TODO: DODATI TEKST
+Sprema promjene u lokalni git repozitorij
                     </script>
                 </section>
                 <section>
                     <h5>Staging area</h5>
                     <img width="80%" height="80%" data-src="img/staging.png" style="background:none; border:none; box-shadow:none;" alt="Staging area">
+                    <aside class="notes">
+                        <ul>
+                            <li>Uvodi pojam staging area koji je specifičan za git</li>
+                            <li>Ako nemamo ništa u staging areau ništa neće biti commitano</li>
+                            <li>Potrebno je prvo fileove dodati u staging area a onda commitati</li>
+                            <li>Omogućuje stvaranje malih atomičnih commitova</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
@@ -147,16 +155,40 @@ Primjer:
 
         git add README test.rb LICENSE
         git commit -m 'The initial commit of my project'
+
+Note:
+* Pošto je git decentraliziran ne može kao svn rabiti brojeve
+za id commita
+* S gitom se može dogoditi slučaj da se nakon nekog vremena
+centralni repozitorij synca sa nekim lokalnim repozitorijom
+* pitanje: Kako davati određenim commitovima id-eve
                     </script>
                 </section>
                 <section>
-                        <img width="80%" height="80%" data-src="img/commit_hash.png" style="background:white; border:none; box-shadow:none;" alt="Sadržaj git commit objekta">
+                    <img width="80%" height="80%" data-src="img/commit_hash.png" style="background:white; border:none; box-shadow:none;" alt="Sadržaj git commit objekta">
+                    <aside class="notes">
+                        <ul>
+                            <li>Svaki file koji se commita dobiva svoj hash preko SHA-256 algoritma</li>
+                            <li>Svaki folder u kojem su napravljene izmjene dobiva hash iz hasha fileova
+                            koji su u njemu</li>
+                            <li>Na kraju se jednom hashu od cijelog projekta pridruže metapodaci od commita
+                            i to se hashira i dobiva se id od commita</li>
+                            <li>Ako bilo tko ima isti takav id znamo da se radi o istom commitu</li>
+                            <li>Također omogućuje kontrolu dali se je repozitorij korumpirao</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                         <img width="80%" height="80%" data-src="img/branch.png" style="background:white; border:none; box-shadow:none;" alt="Više commitova">
                 </section>
                 <section>
                     <img width="80%" height="80%" data-src="img/git_history.png" style="background:none; border:none; box-shadow:none;" alt="Povijest git repozitorija nakon par commitova">
+                    <aside class="notes">
+                        <ul>
+                            <li>prvi "root" commit nema u metapodacima hash na prethodni commit</li>
+                            <li>svi idući commitovi imaju i na taj način git prati povijest projekta</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
@@ -166,33 +198,40 @@ Primjer:
         git branch <branch>
         git branch -d <branch>
         git branch -m <branch>
-
+</br>
 
 Omogućuje stvaranje, preimenovanje i brisanje grana
                     </script>
                 </section>
                 <section>
-                        <img width="80%" height="80%" data-src="img/branching.png" style="background:none; border:none; box-shadow:none;" alt="Više grana u gitu">
+                    <img width="80%" height="80%" data-src="img/branching.png" style="background:none; border:none; box-shadow:none;" alt="Više grana u gitu">
+                    <aside class="notes">
+                        <ul>
+                            <li>Za razliku od svn ne kopira se kompletna grana</li>
+                            <li>Stvara se samo novi file od 40 bytova koji sadrži commit
+                            id na koji ta grana pokazuje</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
-                        <img width="80%" height="80%" data-src="img/diverging_branches.png" style="background:none; border:none; box-shadow:none;" alt="Git nelinearna povijest">
+                    <img width="80%" height="80%" data-src="img/diverging_branches.png" style="background:none; border:none; box-shadow:none;" alt="Git nelinearna povijest">
                 </section>
                 <section data-markdown>
                     <script type="text/template">
 #### Git checkout
 
-Naredba ima tri glavne namjene:
-* Može kreirati novu granu
-        
-        git checkout nova_grana -b
-
-* Služi za promjenu grane koja je u radnom direktoriju
+* Služi za promjenu grane na kojoj se nalazimo
 
         git checkout master
 
-* Može vratiti radni direktorij na bilo koji commit
+* Može poslužiti i da se prebacimo na bilo koji commit
 
         git checkout 98ca9c4664981e4397625791c8ea3bbb5f2279a3
+
+Note:
+* ima tri namjene: checking out files, checking out commits, and checking out branches
+* sinkronizira radni direktorij sa granom koja se checkouta i svi commitovi nadalje
+se commitaju na tu granu
                     </script>
                 </section>
                 <section data-markdown>
@@ -223,7 +262,7 @@ na drugu. Ne mijenja povijest.
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-#### Three way merge
+#### Three-way merge
 
 <img width="60%" height="60%" data-src="img/basic-merging-1.png" alt="Three way merge - before merge">
 <img width="60%" height="60%" data-src="img/basic-merging-2.png" alt="Three way merge - after merge">
