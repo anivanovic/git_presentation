@@ -9,3 +9,7 @@ To clone and run presentation do:
     git clone https://github.com/anivanovic/git_presentation.git
     cd git_presentation
     bower install
+    
+Bower should be installed globaly with npm
+
+    npm install -g bower
