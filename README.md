@@ -1,10 +1,9 @@
-# Git presentation
+# Git Training
 
-Presentation about git written in HTML.
-Reveal js is used as presentation framework.
-Main file is index.html.
+Presentation about GIT written in HTML with
+Reveal.js library.
 
-To clone and run presentation do:
+To build run:
 
     git clone https://github.com/anivanovic/git_presentation.git
     cd git_presentation
